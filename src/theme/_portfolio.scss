@@ -1,0 +1,35 @@
+// Styling for the portfolio grid section
+.portfolio {
+  .portfolio-item {
+    cursor: pointer;
+    position: relative;
+    display: block;
+    max-width: 25rem;
+    border-radius: $border-radius;
+    overflow: hidden;
+    .text-fluid {
+      border: 1px solid green;
+      border-radius: 5px;
+      padding: 35px;
+    }
+    .teaser-img {
+      float: left;
+      max-width: 50px;
+      margin-right: 10px;
+    }
+    .portfolio-item-caption {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: $transition-base;
+      opacity: 0;
+      background-color: fade-out($primary, 0.1);
+      &:hover {
+        opacity: 1;
+      }
+      .portfolio-item-caption-content {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

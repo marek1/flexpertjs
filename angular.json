@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "flexpertsjs"
+    }
+  },
+  "defaultProject": "flexpertsjs",
+  "cli": {
+    "analytics": false
+  }
 }

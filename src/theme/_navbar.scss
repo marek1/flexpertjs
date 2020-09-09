@@ -1,0 +1,35 @@
+// Styling for the navbar
+#mainNav {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  .navbar-brand {
+    color: $white;
+  }
+  a {
+    color: $white !important;
+  }
+  .active {
+    font-weight: bold !important;
+    text-decoration: underline;
+    background-color: cadetblue;
+  }
+  .navbar-nav {
+    margin-top: 1rem;
+  }
+  .navbar-toggler {
+    font-size: 80%;
+    padding: 0.8rem;
+  }
+}
+@include media-breakpoint-down(xs) {
+  #mainNav {
+    font-size: 10px !important;
+    padding: 0.5rem;
+    .navbar-nav {
+      margin-top: 0;
+    }
+  }
+}
+

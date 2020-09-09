@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+// Import custom styles
+@import "./theme/global.scss";
+@import "./theme/divider.scss";
+@import "./theme/buttons.scss";
+@import "./theme/navbar.scss";
+@import "./theme/masthead.scss";
+@import "./theme/portfolio.scss";
+@import "./theme/contact.scss";
+@import "./theme/footer.scss";
+
+a {
+  cursor: pointer;
+}
+
+.container-fluid {
+  margin-top: 88px;
+}
+
+.avatar {
+  max-width: 75px;
+}

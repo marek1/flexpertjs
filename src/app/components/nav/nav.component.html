@@ -1,0 +1,13 @@
+<nav class="navbar bg-secondary fixed-top" id="mainNav">
+  <a routerLink="/" class="navbar-brand">Flexperts</a>
+  <div class="navbar-expand" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" [ngClass]="{'active': isCurrentRoute(COMPANY_ROUTE)}">
+        <a [routerLink]="['/' + COMPANY_ROUTE]" class="nav-link">Company</a>
+      </li>
+      <li class="nav-item" [ngClass]="{'active': isCurrentRoute(FREELANCER_ROUTE)}">
+        <a [routerLink]="['/' + FREELANCER_ROUTE]" class="nav-link">Freelancer</a>
+      </li>
+    </ul>
+  </div>
+</nav>
