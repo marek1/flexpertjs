@@ -20,7 +20,6 @@ export class NavComponent implements OnInit {
   }
 
   isCurrentRoute(routerLink: string): boolean {
-    console.log(routerLink  + ' - ' + this.router.url);
     return '/' + routerLink === this.router.url;
   }
 

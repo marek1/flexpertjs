@@ -1,5 +1,3 @@
-
-
 import {
   Action,
   ActionReducer,
@@ -11,6 +9,7 @@ import {
 import { environment } from '../../environments/environment';
 
 import * as fromCompany from './company.reducers';
+import * as fromGlobal from './global.reducers';
 import { InjectionToken } from '@angular/core';
 
 /**
@@ -19,6 +18,7 @@ import { InjectionToken } from '@angular/core';
  */
 export interface AppState {
   [fromCompany.featureKey]: fromCompany.State;
+  [fromGlobal.featureKey]: fromGlobal.State;
 }
 
 /**
@@ -29,6 +29,7 @@ export interface AppState {
 export const ROOT_REDUCERS = new InjectionToken<ActionReducerMap<AppState, Action>>('Root reducers token', {
   factory: () => ({
     [fromCompany.featureKey]: fromCompany.reducer,
+    [fromGlobal.featureKey]: fromGlobal.reducer,
   })
 });
 
@@ -60,4 +61,19 @@ export const metaReducers: MetaReducer<AppState>[] = !environment.production
 
 export const selectCompanyState = createFeatureSelector<AppState, fromCompany.State>(
   fromCompany.featureKey
+);
+
+
+
+/**
+ * Global Reducers
+ */
+
+export const selectGlobalState = createFeatureSelector<AppState, fromGlobal.State>(
+  fromGlobal.featureKey
+);
+
+export const getGlobalMessages = createSelector(
+  selectGlobalState,
+  fromGlobal.getMessages
 );

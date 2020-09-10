@@ -1,1 +1,56 @@
-<p>contact-us works!</p>
+<div class="reset-margin">
+  <!-- Contact Section-->
+  <section class="page-section" id="contact">
+    <div class="container">
+      <!-- Contact Section Heading-->
+      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Us</h2>
+      <!-- Icon Divider-->
+      <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+        <div class="divider-custom-line"></div>
+      </div>
+      <!-- Contact Section Form-->
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.-->
+          <form novalidate="novalidate" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                <label>Name *</label>
+                <input formControlName="name" class="form-control" id="name" type="text" placeholder="Name" />
+                <p class="help-block text-danger"
+                   *ngIf="contactForm.controls['name'].touched && contactForm.controls['name'].invalid">
+                  Please input a name
+                </p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                <label>Email Address*</label>
+                <input [email]="true" formControlName="email" class="form-control" id="email" type="email" placeholder="Email Address" />
+                <p class="help-block text-danger"
+                   *ngIf="contactForm.controls['email'].touched && contactForm.controls['email'].invalid">
+                  Please input an email address.
+                </p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                <label>Message *</label>
+                <textarea formControlName="message" class="form-control" id="message" rows="5" placeholder="Message" ></textarea>
+                <p class="help-block text-danger"
+                   *ngIf="contactForm.controls['message'].touched && contactForm.controls['message'].invalid">
+                  Please input a message.
+                </p>
+              </div>
+            </div>
+            <br />
+            <div id="success"></div>
+            <button type="submit" class="btn btn-primary btn-xl" [disabled]="!contactForm.valid">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

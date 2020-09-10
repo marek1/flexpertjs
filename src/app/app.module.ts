@@ -12,6 +12,9 @@ import { HomeComponent } from './components/home/home.component';
 import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { GlobalMessagesComponent } from './components/global-messages/global-messages.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,8 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
     HomeComponent,
     NavComponent,
     FooterComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    GlobalMessagesComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,9 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
       }
     }),
     EffectsModule.forRoot([]),
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

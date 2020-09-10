@@ -1,6 +1,6 @@
 import { createReducer } from '@ngrx/store';
 
-export const featureKey = 'basket';
+export const featureKey = 'company';
 
 export interface State {
   loggedIn: boolean;

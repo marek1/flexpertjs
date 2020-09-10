@@ -1,0 +1,9 @@
+<div class="global-messages">
+  <ngb-toast
+  *ngFor="let message of (globalMessages$ | async)"
+  [className]="message.color !== 'red' ? 'bg-success text-light' : 'bg-danger text-light'"
+  >
+      {{message.body}}
+      <div class="close" (click)="close(message)">&times;</div>
+  </ngb-toast>
+</div>
